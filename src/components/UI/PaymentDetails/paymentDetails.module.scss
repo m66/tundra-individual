@@ -1,0 +1,63 @@
+.paymentDetails {
+    margin-top: 70px !important;
+
+    h2 {
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+    }
+
+    .inputsWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .expSecurInputs {
+        width: 48%;
+    }
+
+    .mailInput>div {
+        width: 100%;
+    }
+
+    .inputsSection {
+        width: 100%;
+    }
+
+    .payBtn {
+        margin-top: 40px;
+        text-align: center;
+        
+        button {
+            padding: 18px 136px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 0em;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .inputsWrapper {
+        display: flex;
+        flex-direction: column;
+
+        & div {
+            width: 100%;
+        }
+
+        &>div {
+            margin-bottom: 20px;
+        }
+
+        .expSecurInputs {
+            width: 100%;
+        }
+    }
+}

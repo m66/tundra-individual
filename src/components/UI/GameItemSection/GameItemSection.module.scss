@@ -1,0 +1,81 @@
+.GameItemSection {
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        font-size: 18px;
+        // font-weight: 500;
+        line-height: 21px;
+    }
+}
+
+.gameSectionContent {
+    display: flex;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    .price {
+        color: var(--TSsecondaryTextColor);
+        font-size: 15px !important;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+    }
+}
+
+.description {
+    padding: 25px 100px 0 75px;
+
+    h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+    }
+
+    p {
+        color: var(--TSsecondaryTextColor);
+    }
+
+    .disc1 {
+        margin-bottom: 10px;
+    }
+}
+
+.primaryButton {
+    height: 41px;
+    width: 160px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .GameItemSection {
+        flex-flow: column wrap;
+        align-items: center;
+        margin-bottom: 40px;
+
+        h2, p {
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+
+import MarketPlace from "./pages/MarketPlace/MarketPlace";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import IndividualTab from "./components/UI/IndividualTab/IndividualTab";
+import PackagesTab from "./components/UI/PackagesTab/PackagesTab";
+
+import "./assets/styles/reset.scss";
+import "./assets/styles/global.scss";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<MarketPlace />}>
+          <Route path="/" element={<IndividualTab />} />
+          <Route path="/packages" element={<PackagesTab />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </div>
   );
 }

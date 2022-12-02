@@ -1,0 +1,48 @@
+.summaryItem {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+
+    img {
+        height: 90px;
+        width: 97px;
+        left: 0px;
+        top: 0px;
+        border-radius: 5px;
+    }
+
+    .description {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 25px;
+
+        .title {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: 0em;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .priceTitle {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+            letter-spacing: 0em;
+
+            .price {
+                color: var(--TSsecondaryTextColor);
+            }
+        }
+
+        .closeBtn button{
+            border: transparent;
+            color: var(--TStextColor);
+            background: transparent;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.subTotal {
+    // width: 82%;
+    margin-top: 40px !important;
+
+    h2 {
+        width: 100%;
+        text-align: start;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28px;
+        letter-spacing: 0em;
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        span {
+            color: var(--TSsecondaryTextColor);
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: 0em;
+        }
+    }
+}

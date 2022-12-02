@@ -1,0 +1,22 @@
+.paymentInput {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0em;
+        margin-bottom: 15px;
+    }
+
+    input {
+        color: var(--TSsecondaryTextColor);
+        background-color: transparent;
+        padding: 15px 25px;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0em;
+        border-radius: 0;
+    }
+}

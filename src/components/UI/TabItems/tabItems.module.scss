@@ -1,0 +1,23 @@
+.tabItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+        display: flex;
+
+        li {
+            color: var(--TSsecondaryTextColor);
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: 0em;
+            cursor: pointer;
+        }
+    }
+}
+
+.active {
+    color: var(--TStextColor);
+}
