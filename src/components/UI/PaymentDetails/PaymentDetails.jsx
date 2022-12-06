@@ -4,6 +4,7 @@ import PaymentInput from "./PaymentInput/PaymentInput";
 import styles from "./paymentDetails.module.scss";
 
 const PaymentDetails = () => {
+  let isDisabel = false;
   const [paymantData, setPaymantData] = useState({
     name: "",
     number: "",
@@ -22,6 +23,12 @@ const PaymentDetails = () => {
     });
   }
 
+  console.log(paymantData);
+
+  for(let key in paymantData) {
+    if(paymantData[key] === '') isDisabel = true;
+  }
+  
   return (
     <div className={`content ${styles.paymentDetails}`}>
       <h2>PAYMANT DETAILS</h2>
@@ -72,7 +79,7 @@ const PaymentDetails = () => {
         </div>
       </div>
       <div className={styles.payBtn}>
-        <button>PAY NOW</button>
+        <button disabled={isDisabel && "disabled"}>PAY NOW</button>
       </div>
     </div>
   );

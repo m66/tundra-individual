@@ -1,13 +1,23 @@
 .GameItemSection {
+    box-sizing: border-box;
     width: 100%;
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
+    border: 1px solid transparent;
+    transition: 1s;
+    border-radius: 5px;
 
     p {
         font-size: 18px;
-        // font-weight: 500;
         line-height: 21px;
+    }
+
+    &:hover {
+        border: 1px solid linear-gradient(to top, #060606b0, #ffffff73);
+        border-radius: 10px;
+        background: linear-gradient(to top, #32323200, #ffffff1c);
+        background-clip: padding-box;
     }
 }
 
@@ -57,6 +67,7 @@
 .primaryButton {
     height: 41px;
     width: 160px;
+    border: transparent;
     border-radius: 3px;
     font-size: 14px;
     font-weight: 700;
@@ -70,7 +81,8 @@
         align-items: center;
         margin-bottom: 40px;
 
-        h2, p {
+        h2,
+        p {
             text-align: center;
         }
 

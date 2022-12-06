@@ -19,4 +19,9 @@
         letter-spacing: 0em;
         border-radius: 0;
     }
+
+    .errorMessage {
+        margin-top: 5px;
+        color: var(--TSErrorMessageColor);
+    }
 }

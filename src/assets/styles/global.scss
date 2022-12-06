@@ -2,14 +2,13 @@
     --TSbgColor: #111111;
     --TStextColor: #fff;
     --TSlinkColor: #8D8D9B;
-    --TSsecondaryTextColor: #B8B8B8
+    --TSsecondaryTextColor: #B8B8B8;
+    --TSErrorMessageColor: #ff00006e;
 }
 
 .content {
     width: 82%;
     margin: 0 auto;
-    // padding: 0px 120px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
