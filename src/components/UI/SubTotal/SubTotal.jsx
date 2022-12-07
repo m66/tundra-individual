@@ -1,4 +1,3 @@
-import React from 'react'
 import Button from '../../Forms/Button/Button';
 
 import styles from './subTotal.module.scss';
@@ -14,7 +13,7 @@ const SubTotal = ({selectedGamesArr}) => {
       <h2>SUBTOTAL</h2>
       <div className={styles.content}>
         <span>{total}$</span>
-        <Button>CHECKOUT</Button>
+        <Button type='primary'>CHECKOUT</Button>
       </div>
     </div>
   )

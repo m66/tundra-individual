@@ -1,23 +1,21 @@
-import React from "react";
-
 import styles from "./tabItems.module.scss";
 
-const TabItems = ({ handlecklick, tabvalue }) => {
+const TabItems = ({ handleClick, tabValue }) => {
   return (
     <div className={styles.tabItems}>
       <ul>
         <li
-          style={{ color: tabvalue === 1 && "#fff"}}
+          style={{ color: tabValue === 'individual' && "#fff"}}
           onClick={() => {
-            handlecklick(1);
+            handleClick('individual');
           }}
         >
           Individual
         </li>
         <li
-          style={{ color: tabvalue === 2 && "#fff"}}
+          style={{ color: tabValue === 'package' && "#fff"}}
           onClick={() => {
-            handlecklick(2);
+            handleClick('package');
           }}
         >
           Package

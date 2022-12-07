@@ -1,22 +1,30 @@
 import React, { useState } from "react";
 
 import PaymentDetails from "../../components/UI/PaymentDetails/PaymentDetails";
-import IndividualTab from "../../components/UI/IndividualTab/IndividualTab";
-import PackagesTab from "../../components/UI/PackagesTab/PackagesTab";
+import GameTabs from "../../components/UI/GameTabs/GameTabs";
 import SubTotal from "../../components/UI/SubTotal/SubTotal";
 import TabItems from "../../components/UI/TabItems/TabItems";
-import { individualGamesData } from "../../constants/const";
 import Summary from "../../components/UI/Summary/Summary";
+
+import { individualGamesData } from "../../constants/const";
 
 import styles from "./marketPlace.module.scss";
 
 const MarketPlace = () => {
-
-  const [tabvalue, setTabvalue] = useState(1);
+  const [tabValue, setTabValue] = useState("individual");
   const [selectedGamesArr, setSelectedGamesArr] = useState([]);
+  const [paymantData, setPaymantData] = useState({
+    name: "",
+    number: "",
+    date: "",
+    code: "",
+    address: "",
+    email: "",
+    errors: null,
+  });
 
-  function handletabchange(tabvalue) {
-    setTabvalue(tabvalue);
+  function handleTabChange(tabValue) {
+    setTabValue(tabValue);
   }
 
   function handleSelectGame(id) {
@@ -38,26 +46,41 @@ const MarketPlace = () => {
     setSelectedGamesArr((prev) => prev.filter((i) => i.id !== id));
   }
 
+  function handleSubmitData(e) {
+    const userData = Object.keys(paymantData)
+      .filter((key) => key !== "errors")
+      .reduce((cur, key) => {
+        return Object.assign(cur, { [key]: paymantData[key] });
+      }, {});
+
+    const data = {
+      userData: {
+        ...userData,
+      },
+      selectedGamesId: selectedGamesArr.map((i) => i.id),
+    };
+
+    console.log(data);
+  }
+
   return (
     <div className={styles.marketPlace}>
-      <TabItems handlecklick={handletabchange} tabvalue={tabvalue} />
-      {tabvalue === 1 ? (
-        <IndividualTab
-          handleSelectGame={handleSelectGame}
-          selectedGamesArr={selectedGamesArr}
-        />
-      ) : (
-        <PackagesTab
-          handleSelectGame={handleSelectGame}
-          selectedGamesArr={selectedGamesArr}
-        />
-      )}
+      <TabItems handleClick={handleTabChange} tabValue={tabValue} />
+      <GameTabs
+        handleSelectGame={handleSelectGame}
+        selectedGamesArr={selectedGamesArr}
+        tabValue={tabValue}
+      />
       <Summary
         selectedGamesArr={selectedGamesArr}
         handleRemoveItem={handleRemoveItem}
       />
       <SubTotal selectedGamesArr={selectedGamesArr} />
-      <PaymentDetails />
+      <PaymentDetails
+        handleSubmitData={handleSubmitData}
+        setPaymantData={setPaymantData}
+        paymantData={paymantData}
+      />
     </div>
   );
 };

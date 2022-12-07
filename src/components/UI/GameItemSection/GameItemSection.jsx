@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../Forms/Button/Button";
 
 import styles from "./GameItemSection.module.scss";
 
@@ -21,7 +22,7 @@ const GameItemSection = ({
   return (
     <div className={styles.GameItemSection}>
       <div className={styles.imgWrapper}>
-        <img src={`${imgUrl}`} alt={title}/>
+        <img src={`${imgUrl}`} alt={title} />
       </div>
       <div className={styles.description}>
         <h2>{title.toUpperCase()}</h2>
@@ -33,12 +34,9 @@ const GameItemSection = ({
         <p>
           PRICE: <span className={styles.price}>{price}$</span>
         </p>
-        <button
-          className={styles.primaryButton}
-          onClick={() => handleSelect(id)}
-        >
+        <Button onClick={() => handleSelect(id)} type='primary'>
           {isSelected ? "REMOVE" : "SELECT"}
-        </button>
+        </Button>
       </div>
     </div>
   );

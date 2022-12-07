@@ -64,17 +64,6 @@
     }
 }
 
-.primaryButton {
-    height: 41px;
-    width: 160px;
-    border: transparent;
-    border-radius: 3px;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    cursor: pointer;
-}
-
 @media (max-width: 992px) {
     .GameItemSection {
         flex-flow: column wrap;

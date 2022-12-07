@@ -12,16 +12,25 @@
 
     input {
         color: var(--TSsecondaryTextColor);
-        background-color: transparent;
+        background-color: transparent !important;
         padding: 15px 25px;
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0em;
         border-radius: 0;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     .errorMessage {
         margin-top: 5px;
         color: var(--TSErrorMessageColor);
+
+    }
+
+    .errorBorder {
+        border: 1px solid var(--TSErrorMessageColor);
     }
 }
